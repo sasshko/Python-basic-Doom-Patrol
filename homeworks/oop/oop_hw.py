@@ -10,7 +10,7 @@ class Bus(Vehicle):
         super().__init__(max_speed, mileage)
         self.seating_capacity = seating_capacity
 
-    def seating_capacity(self):
+    def print_seat(self):
         print(self.seating_capacity)
 #3
 m = Bus(200, 20000, 32)
@@ -24,11 +24,16 @@ class School:
         self.number_of_students = number_of_students
 #6
 class SchoolBus(School, Bus):
-    def __init__(self, max_speed, mileage, seating_capacity, get_school_id, number_of_students, bus_school_color):
-        super().__init__(max_speed, mileage, seating_capacity, get_school_id, number_of_students)
+    def __init__(self, max_speed,
+                 mileage, seating_capacity,
+                 get_school_id, number_of_students,
+                 bus_school_color):
+        super().__init__(max_speed, mileage,
+                         seating_capacity, get_school_id,
+                         number_of_students)
         self.bus_school_color = bus_school_color
 
-    def bus_school_color(self):
+    def print_col(self):
         print(f'Bus is {self.bus_school_color}')
 #7
 class Bear:
