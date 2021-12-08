@@ -32,13 +32,11 @@ class School:
 
 # 6
 class SchoolBus(School, Bus):
-    def __init__(self, max_speed,
-                 mileage, seating_capacity,
-                 get_school_id, number_of_students,
+    def __init__(self, get_school_id, number_of_students,
+                 max_speed, mileage, seating_capacity,
                  bus_school_color):
-        super().__init__(max_speed, mileage,
-                         seating_capacity, get_school_id,
-                         number_of_students)
+        School.__init__(self, get_school_id, number_of_students)
+        Bus.__init__(self, max_speed, mileage, seating_capacity)
         self.bus_school_color = bus_school_color
 
     def print_col(self):
