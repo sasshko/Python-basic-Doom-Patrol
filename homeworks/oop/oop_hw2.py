@@ -68,21 +68,23 @@ print(pasta_2)
 class Concert:
     max_visitors_num = 0
 
-    def __init__(self, visitors_count):
-        self.visitors_count = 0
+    def __init__(self):
+        self._visitors_count = 0
 
     @property
-    def visit_count(self):
-        return self.visitors_count
+    def visitors_count(self):
+        return self._visitors_count
 
-    @visit_count.setter
-    def visit_count(self, num):
-        if num > self.max_visitors_num:
-            self.visitors_count = self.max_visitors_num
+    @visitors_count.setter
+    def visitors_count(self, num):
+        if num < self.max_visitors_num:
+            self._visitors_count = num
+        else:
+            self._visitors_count = self.max_visitors_num
 
 
 Concert.max_visitors_num = 50
-concert = Concert(1000)
+concert = Concert()
 concert.visitors_count = 1000
 print(concert.visitors_count)
 
@@ -138,10 +140,10 @@ class AddressBook:
         self.age = int(age)
 
     def __str__(self):
-        return f'addbook {self.key}, {self.name}, \
-               f {self.phone_number}, {self.address}, \
-               f {self.email}, {self.birthday}, \
-               f {self.age}'
+        return f'addbook {self.key}, {self.name},' \
+               f'{self.phone_number}, {self.address},' \
+               f'{self.email}, {self.birthday},' \
+               f'{self.age}'
 
 
 adresa = AddressBook(key=22, name='meine',
@@ -190,7 +192,6 @@ bob = Student(0, 'Bob')
 
 setattr(bob, 'student_email', 'bob4@.com')
 print(getattr(bob, 'student_email'))
-
 
 # 11
 # class Celsius:
