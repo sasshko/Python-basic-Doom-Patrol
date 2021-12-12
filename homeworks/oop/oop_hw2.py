@@ -81,7 +81,7 @@ class Concert:
             self.visitors_count = self.max_visitors_num
 
 
-Concert.max_visitor_num = 50
+Concert.max_visitors_num = 50
 concert = Concert(1000)
 concert.visitors_count = 1000
 print(concert.visitors_count)
@@ -193,19 +193,19 @@ print(getattr(bob, 'student_email'))
 
 
 # 11
-class Celsius:
-    def __init__(self, temperature):
-        self._temperature = temperature
-
-    @property
-    def print_temp(self):
-        return self._temperature
-
-    @print_temp.setter
-    def print_temp(self, fahr):
-        self._temperature = fahr
-
-
-t = Celsius(32)
-t.print_temp = t.print_temp * 1.8 + 32
-print(t.print_temp)
+# class Celsius:
+#     def __init__(self, temperature):
+#         self._temperature = temperature
+#
+#     @property
+#     def print_temp(self):
+#         return self._temperature
+#
+#     @print_temp.setter
+#     def print_temp(self, fahr):
+#         self._temperature = fahr
+#
+#
+# t = Celsius(32)
+# t.print_temp = t.print_temp * 1.8 + 32
+# print(t.print_temp)
